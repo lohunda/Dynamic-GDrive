@@ -10,3 +10,13 @@ Start the local host by python -m SimpleHTTPServer 8000.
 <https://developers.google.com/drive/v3/reference/>
 
 
+#developing plan
+
+-----------------------------------------
+|7  |framework and base function ready  |
+|10 |ui developing 1                    |
+|13 |ui developing 2                    |
+|16 |UI enhancement                     |
+|18 | finish                            |
+-----------------------------------------
+
