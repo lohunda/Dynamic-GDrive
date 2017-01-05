@@ -1,0 +1,9 @@
+{
+  "name":"project Engine",
+  "rootPath":"project",
+  "moduleName":"project",
+  "loader":{
+    "rest":"router/rest"
+  },
+  "app":"app"
+}

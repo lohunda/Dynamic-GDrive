@@ -1,0 +1,12 @@
+{
+  "name":"user management",
+  "rootPath":"userMgt",
+  "moduleName":"userMgt",
+  "loader":{
+    "userSchema":"database/userSchema",
+    "userDao":"database/userDao",
+    "userService":"service/userService",
+    "rest":"router/rest"
+  },
+  "app":"app"
+}

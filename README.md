@@ -12,13 +12,15 @@ Start the local host by python -m SimpleHTTPServer 8000.
 
 #developing plan
 
------------------------------------------
+
+| *day*| *task*|
+|------|-------|
 |7  |framework and base function ready  |
 |10 |ui developing 1                    |
 |13 |ui developing 2                    |
 |16 |UI enhancement                     |
 |18 | finish                            |
------------------------------------------
+
 
 #google account
 

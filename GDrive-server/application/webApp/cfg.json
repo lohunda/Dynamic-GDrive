@@ -1,0 +1,10 @@
+{
+  "name":"webApp",
+  "rootPath":"",
+  "moduleName":"webApp",
+  "loader":{
+    "home":"router/home",
+    "document":"router/document"
+  },
+  "app":"app"
+}
