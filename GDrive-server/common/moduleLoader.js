@@ -1,6 +1,6 @@
 var fs = require("fs");
 
-var sequelize= require('./sequlizeManager')();
+global.sequelize= require('./sequlizeManager')();
 
 const moduleLoader = {
   applicationLoader(app) {

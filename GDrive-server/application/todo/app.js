@@ -1,6 +1,6 @@
 var todo = require($app.todo.todo);
 
-var Sequelize = require('sequelize');
+
 
 /**
  * express setting

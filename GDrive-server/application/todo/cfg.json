@@ -4,7 +4,8 @@
   "moduleName":"todo",
   "loader":{
     "todo":"router/todo",
-    "todoEntity":"entity/todoEntity"
+    "todoEntity":"entity/todoEntity",
+    "todoDao":"dao/todoDao"
   },
   "app":"app"
 }

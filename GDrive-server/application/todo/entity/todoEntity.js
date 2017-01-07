@@ -1,7 +1,11 @@
+var Sequelize = require('sequelize');
 
-
-module.exports =function(sequelize){
+module.exports =function(){
   var todo = sequelize.define('todo', {
+    uuid: {
+      type: Sequelize.STRING,
+      field: 'uuid'
+    },
     uGuid: {
       type: Sequelize.STRING,
       field: 'uGuid'

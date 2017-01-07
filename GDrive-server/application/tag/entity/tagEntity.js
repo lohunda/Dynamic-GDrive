@@ -1,7 +1,12 @@
 
+var Sequelize = require('sequelize');
 
-module.exports =function(sequelize){
+module.exports =function(){
   var tag = sequelize.define('tag', {
+    uuid: {
+      type: Sequelize.STRING,
+      field: 'uuid'
+    },
     uGuid: {
       type: Sequelize.STRING,
       field: 'uGuid'
