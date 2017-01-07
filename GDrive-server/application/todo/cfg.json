@@ -1,0 +1,10 @@
+{
+  "name":"todo",
+  "rootPath":"",
+  "moduleName":"todo",
+  "loader":{
+    "todo":"router/todo"
+
+  },
+  "app":"app"
+}

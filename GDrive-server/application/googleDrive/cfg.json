@@ -1,0 +1,9 @@
+{
+  "name":"googleDrive",
+  "rootPath":"",
+  "moduleName":"GDrive",
+  "loader":{
+    "drive":"router/drive"
+  },
+  "app":"app"
+}

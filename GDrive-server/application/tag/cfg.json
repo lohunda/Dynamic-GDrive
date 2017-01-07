@@ -1,0 +1,9 @@
+{
+  "name":"tag",
+  "rootPath":"",
+  "moduleName":"tag",
+  "loader":{
+    "tag":"router/tag"
+  },
+  "app":"app"
+}
