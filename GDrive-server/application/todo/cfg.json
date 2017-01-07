@@ -3,8 +3,8 @@
   "rootPath":"",
   "moduleName":"todo",
   "loader":{
-    "todo":"router/todo"
-
+    "todo":"router/todo",
+    "todoEntity":"entity/todoEntity"
   },
   "app":"app"
 }

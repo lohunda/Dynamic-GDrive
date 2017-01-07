@@ -1,5 +1,6 @@
 var fs = require("fs");
 
+var sequelize= require('./sequlizeManager')();
 
 const moduleLoader = {
   applicationLoader(app) {
@@ -23,7 +24,7 @@ const moduleLoader = {
       }
 
       if (cfg.app) {
-        require(filePath + cfg["app"])(app);
+        require(filePath + cfg["app"])(app,sequelize);
       }
 
     } catch (err) {
