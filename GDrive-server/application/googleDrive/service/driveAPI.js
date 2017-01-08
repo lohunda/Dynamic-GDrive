@@ -10,8 +10,8 @@ function listFiles(auth) {
   var service = google.drive('v3');
   service.files.list({
     auth: auth,
-    pageSize: 10,
-    fields: "nextPageToken, files(id, name)"
+    //pageSize: 10,
+    //fields: "nextPageToken, files(id, name)"
   }, function(err, response) {
     if (err) {
       console.log('The API returned an error: ' + err);
@@ -30,6 +30,43 @@ function listFiles(auth) {
   });
 }
 
-var author=require('./authorize');
 
-author(listFiles);
+function get(auth) {
+  var service = google.drive('v3');
+  service.about.get({
+    auth: auth,
+    fields: "user"
+  }, function(err, response) {
+    if (err) {
+      console.log('The API returned an error: ' + err);
+      return;
+    }
+    console.log(response);
+  });
+}
+
+
+/**
+ * get the root folder and file
+ * @param auth
+ */
+module.exports.getRoot = function getRoot(auth,callback){
+  var service = google.drive('v3');
+  service.files.list({
+    auth: auth,
+    pageSize: 1000,
+    fields: "nextPageToken, files",
+    q:"'root' in parents"
+  }, function(err, response) {
+    if (err) {
+      console.log('The API returned an error: ' + err);
+      return;
+    }
+    callback(err,response);
+  });
+}
+
+
+
+
+//author(listFiles);

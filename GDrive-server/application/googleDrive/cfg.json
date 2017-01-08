@@ -1,9 +1,12 @@
 {
-  "name":"googleDrive",
-  "rootPath":"",
-  "moduleName":"GDrive",
-  "loader":{
-    "drive":"router/drive"
+  "name": "googleDrive",
+  "rootPath": "",
+  "moduleName": "GDrive",
+  "loader": {
+    "drive": "router/drive",
+    "driveService": "service/driveAPI",
+    "authorize": "service/authorize",
+    "clientSecret":"client_secret.json"
   },
-  "app":"app"
+  "app": "app"
 }

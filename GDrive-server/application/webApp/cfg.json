@@ -4,7 +4,8 @@
   "moduleName":"webApp",
   "loader":{
     "home":"router/home",
-    "document":"router/document"
+    "document":"router/document",
+    "GDrive":"router/GDrive"
   },
   "app":"app"
 }
