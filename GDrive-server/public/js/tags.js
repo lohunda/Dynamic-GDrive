@@ -1,11 +1,11 @@
-var dashboard = {
+var tags = {
   init: function init() {
-    dashboard.getRootFiles();
+    todo.add();
   },
-  getRootFiles: function () {
+  add: function () {
     $.ajax({
-      url: "/GDrive/getRootFiles",
-      method: "get",
+      url: "/tags/add",
+      method: "post",
       success: function (res) {
 
         console.log(res);
@@ -19,5 +19,5 @@ var dashboard = {
 };
 
 $(function () {
-  dashboard.init();
+  tags.init();
 });

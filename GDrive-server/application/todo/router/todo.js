@@ -8,7 +8,7 @@ router.get('/', function (req, res) {
   res.send("something");
 });
 
-router.get('/add', function (req, res) {
+router.post('/add', function (req, res) {
 
   var sendin = {uuid: uuid.v1(), uGuid: '1', oGuid: 'file1', desc: 'test', isFinish: false};
 

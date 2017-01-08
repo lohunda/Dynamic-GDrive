@@ -7,7 +7,7 @@ var tag = require($app.tag.tag);
  */
 module.exports = function (app) {
 
-  app.use('/tag', tag);
+  app.use('/tags', tag);
 
 
 }
