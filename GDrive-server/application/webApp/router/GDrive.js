@@ -17,6 +17,14 @@ router.get('/todo', function(req, res) {
   res.render('todo');
 });
 
+router.get('/tags', function(req, res) {
+  res.render('tags');
+});
+
+router.get('/todo', function(req, res) {
+  res.render('todo');
+});
+
 
 
 
