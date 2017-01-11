@@ -450,6 +450,11 @@ li.ui-state-default:last-child {
   margin-top: 40px;
 }
 
+.folder-container .folder-single {
+  margin: .5em;
+  height: 20em;
+}
+
 .folder-container .folder-img {
   width: 10em;
   height: 10em;
