@@ -68,5 +68,23 @@ module.exports.getRoot = function getRoot(auth,callback){
 
 
 
+module.exports.getFilesByFolder = function getRoot(auth,folderId,callback){
+  var service = google.drive('v3');
+  service.files.list({
+    auth: auth,
+    pageSize: 1000,
+    fields: "nextPageToken, files",
+    q:"'"+folderId+"' in parents"
+  }, function(err, response) {
+    if (err) {
+      console.log('The API returned an error: ' + err);
+      return;
+    }
+    callback(err,response);
+  });
+}
+
+
+
 
 //author(listFiles);
