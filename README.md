@@ -26,3 +26,24 @@ Start the local host by python -m SimpleHTTPServer 8000.
 
 sdc@businessos.net/Pwcwelcome1!
 
+#install instruction
+
+
+
+first :
+```
+npm install
+```
+
+second:
+```
+npm install bower -g
+```
+
+third:
+```
+bower install
+```
+
+
+
