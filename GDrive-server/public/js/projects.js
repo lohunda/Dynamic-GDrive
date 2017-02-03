@@ -46,7 +46,7 @@ var projects = {
     //   '</div>' +
     //   '</div></div>';
 
-      return fileHtml;
+      return "";
   }
 };
 
