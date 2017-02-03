@@ -461,6 +461,6 @@ li.ui-state-default:last-child {
 
 
 
-.main-section{
-
+.main-section .main-content{
+  margin-top: 70px;
 }
