@@ -9,6 +9,10 @@ router.get('/dashboard', function(req, res) {
   res.render('dashboard');
 });
 
+router.get('/projects', function(req, res) {
+  res.render('projects');
+});
+
 router.get('/metrics', function(req, res) {
   res.render('metrics');
 });

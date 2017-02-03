@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -458,4 +457,10 @@ li.ui-state-default:last-child {
 .folder-container .folder-img {
   width: 10em;
   height: 10em;
+}
+
+
+
+.main-section{
+
 }

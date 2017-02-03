@@ -11,6 +11,7 @@
     "materialize": "^0.97.8",
     "chart.js": "^2.4.0",
     "bootstrap": "^3.3.7",
-    "jquery-ui": "^1.12.1"
+    "jquery-ui": "^1.12.1",
+    "components-font-awesome": "^4.7.0"
   }
 }
