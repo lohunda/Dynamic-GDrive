@@ -58,7 +58,7 @@ router.post('/upload', function (req, res) {
   }
 
   async.eachSeries(req.files, function (file, callback) {
-    var filePath = 'uploads/' + path.extname(file.name);
+    var filePath = 'uploads/' + uuid.v4() + path.extname(file.name);
     file.mv(filePath, function (err) {
       if (err) {
         callback(err);

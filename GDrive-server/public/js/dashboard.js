@@ -2,13 +2,16 @@ var dashboard = {
   init: function init() {
     dashboard.getRootFiles();
 
-    $('#input-file').change(function () {
+    $('#upload').click(function () {
+      debugger
       var formData = new FormData();
-      if (this.files.length == 0) {
+      var files = $('#input-file')[0].files;
+      if (files.length == 0) {
+        alert('not files are selected.')
         return;
       }
-      for (var key in this.files) {
-        formData.append('file' + key, this.files[key]);
+      for (var key in files) {
+        formData.append('file' + key, files[key]);
       }
       $.ajax({
         url: '/GDrive/upload',
@@ -18,6 +21,7 @@ var dashboard = {
         type: 'post',
         success: function (res) {
           alert('upload success');
+          location.reload();
         },
         error: function (err) {
           alert('upload error');
