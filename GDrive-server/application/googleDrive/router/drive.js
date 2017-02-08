@@ -1,4 +1,8 @@
 var express = require('express');
+var fs = require('fs');
+var uuid = require('node-uuid');
+var path = require('path');
+var async = require("async");
 var router = express.Router();
 
 var authorize = require($app.GDrive.authorize);
@@ -13,7 +17,7 @@ router.get('/getRootFiles', function (req, res) {
   authorize(function (auth) {
     api.getRoot(auth, function (err, result) {
       if (err) {
-        res.send({code:100,msg:"get root file error"});
+        res.send({code: 100, msg: "get root file error"});
         return
       }
 
@@ -24,14 +28,58 @@ router.get('/getRootFiles', function (req, res) {
 
 router.get('/getFilesByFolder', function (req, res) {
   authorize(function (auth) {
-    api.getRoot(auth,req.query.id, function (err, result) {
+    api.getRoot(auth, req.query.id, function (err, result) {
       if (err) {
-        res.send({code:100,msg:"get root file error"});
+        res.send({code: 100, msg: "get root file error"});
         return
       }
 
       res.send(result);
     });
+  });
+});
+
+router.post('/delete', function (req, res) {
+  authorize(function (auth) {
+    api.deleteFile(auth, req.body.id, function (err, result) {
+      if (err) {
+        res.send({code: 100, msg: "delete file error"});
+        return
+      }
+      res.send(result);
+    });
+  });
+});
+
+router.post('/upload', function (req, res) {
+  if (!req.files) {
+    res.send({code: 100, msg: "No files were uploaded."});
+    return;
+  }
+
+  async.eachSeries(req.files, function (file, callback) {
+    var filePath = 'uploads/' + path.extname(file.name);
+    file.mv(filePath, function (err) {
+      if (err) {
+        callback(err);
+        return;
+      }
+      authorize(function (auth) {
+        api.createFile(auth, file, filePath, function (err, result) {
+          if (err) {
+            callback(err, result);
+            return
+          }
+          callback(null, result);
+        });
+      });
+    });
+  }, function (err, result) {
+    if (err) {
+      res.send({code: 100, msg: "upload file error"});
+      return
+    }
+    res.send(result);
   });
 });
 

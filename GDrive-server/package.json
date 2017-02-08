@@ -17,6 +17,7 @@
     "googleapis": "^16.0.0",
     "helmet": "^3.3.0",
     "morgan": "^1.6.1",
+    "multer": "^1.3.0",
     "mysql": "^2.12.0",
     "node-uuid": "^1.4.7",
     "request": "^2.79.0",
