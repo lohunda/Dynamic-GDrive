@@ -109,14 +109,48 @@ var dashboard = {
         },
         'todo3': {
           name: 'edit jira card 015',
+          selected: true,
+        },
+        'todo4': {
+          name: 'edit jira card 016',
+          selected: false,
+        },
+        'todo5': {
+          name: 'edit jira card 017',
+          selected: false,
+        },
+        'todo6': {
+          name: 'edit jira card 018',
           selected: false,
         }
       };
 
 
       for (var key in mockData) {
-        $(".js-hook-todo-content").append('<div class="col-md-12 todo-item">' + mockData[key].name + '</div>');
+
+        if(mockData[key].selected){
+          $(".js-hook-todo-content").append('<div class="col-md-12 todo-item" data="true"><div class="area-board col-md-12 active"><div class="col-md-10">' + mockData[key].name + '</div><div class="col-md-2 todo-icon" style=""><i class="fa fa-check" aria-hidden="true"></i></div></div></div>');
+        }else
+        {
+          $(".js-hook-todo-content").append('<div class="col-md-12 todo-item" data="false"><div class="area-board col-md-12"><div class="col-md-10">' + mockData[key].name + '</div><div class="col-md-2 todo-icon" style="display: none"><i class="fa fa-check" aria-hidden="true"></i></div></div></div>');
+        }
       }
+
+      $(".todo-item").click(function(){
+
+        if($(this).attr('data')=="true")
+        {
+          $(this).attr('data',"false");
+          $(this).find(".area-board").removeClass("active");
+          $(this).find('.todo-icon').hide();
+
+        }else {
+          $(this).attr('data',"true");
+          $(this).find(".area-board").addClass("active");
+          $(this).find('.todo-icon').show();
+        }
+
+      });
 
     }
 }

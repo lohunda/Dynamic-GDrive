@@ -523,11 +523,18 @@ dashboard
 
 }
 
+.todo-area .todo-item {
+  cursor: pointer;
+}
 
 
+.todo-area .todo-item .active{
+  border-color: #00C853;
+  border-width:1.5px;
+}
 
-.todo-area .todo-item{
-
+.todo-area .todo-btn-area {
+  margin-top: 20px;
 }
 
 
@@ -537,7 +544,18 @@ dashboard
 
 
 .online-member .online-team-area img{
-  width:100%;
+  width:651px;
+  height:188px;
+
+}
+
+.online-member .online-david {
+  position: absolute;
+  width:10.5%;
+  top:43.9%;
+  left:13%;
+  display: none;
+
 }
 
 /***
