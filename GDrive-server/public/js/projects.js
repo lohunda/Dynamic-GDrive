@@ -25,28 +25,44 @@ var projects = {
       }
   },
   singleFile:function(file){
-    // var fileHtml = '<div class="panel panel-default folder-single col-md-3">' +
-    //   '<div class="panel-body text-center">' +
-    //   '<div class="folder-img-container">' ;
-    // if(file.mimeType==="application/vnd.google-apps.folder")
-    // {
-    //   fileHtml +='<img src="/img/folder.png" class="folder-img">';
-    // }else if(file.mimeType==="application/vnd.google-apps.document"){
-    //   fileHtml +='<img src="/img/doc.png" class="folder-img">';
-    // }else {
-    //   fileHtml +='<img src="/img/normalfile.png" class="folder-img">';
-    // }
-    //
-    // fileHtml += '</div>' +
-    //   '<div class="col-md-12">'+file.name+'</div>' +
-    //   '<div class="col-md-12"><span class="label label-default">important</span></div>' +
-    //   '<div class="col-md-12">' +
-    //   '<a class="btn btn-primary">view</a>' +
-    //   '<a class="btn btn-primary">download</a>' +
-    //   '</div>' +
-    //   '</div></div>';
 
+    if(file.mimeType==="application/vnd.google-apps.folder"){
+
+      var complete=Math.floor(Math.random() * 20);
+      var progress=Math.floor(Math.random() * 20);
+      var projectItem='<div class="col-md-6">'+
+        '<div class="card single-project">'+
+        '<div class="card-block">'+
+        '<h4 class="card-title">'+file.name+'</h4>'+
+        '<h6 bind-data="'+file.id+'">open this folder <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h6>'+
+
+        '<div class="project-item-line"></div>'+
+
+        '<div class="col-md-12 project-information">'+
+        '<div class="col-md-6 text-center">'+
+        '<div class="progress-area">'+
+        '<h3>'+progress+'</h3>'+
+        '<div>in progress</div>'+
+       '</div>'+
+        '</div>'+
+
+        '<div class="col-md-6 text-center project-complete">'+
+        '<div class="progress-area">'+
+        '<h3>'+complete+'</h3>'+
+        '<div>complete</div>'+
+        '</div>'+
+        '</div>'+
+        '</div>'+
+        '</div>'+
+        '</div>'+
+        '</div>';
+      return projectItem;
+
+    }else {
       return "";
+    }
+
+
   }
 };
 
