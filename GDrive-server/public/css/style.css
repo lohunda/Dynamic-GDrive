@@ -493,8 +493,21 @@ start of projects part
  width:100%;
 
 }
+
+.folder-container .project-item-line {
+  width:100%;
+  border-bottom-color: rgba(0,0,0,.125);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.folder-container .project-complete
+{
+  border-left: 1px solid rgba(0,0,0,.125);
+}
+
 /***
-start of projects part
+end of projects part
  */
 
 
