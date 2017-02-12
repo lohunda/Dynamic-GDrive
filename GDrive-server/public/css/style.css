@@ -498,3 +498,48 @@ start of projects part
  */
 
 
+
+
+
+/**
+dashboard
+ */
+
+.area-board{
+  border-style: solid;
+  border-color:#888888;
+  border-width: 1px;
+  border-radius:2px;
+  margin-top: 5px;
+  padding:20px;
+}
+
+.project-time-line{
+
+}
+
+.project-time-line .project-img-container img{
+ width:100%;
+
+}
+
+
+
+
+.todo-area .todo-item{
+
+}
+
+
+.hot-search-area .search-img img{
+  width:100%;
+}
+
+
+.online-member .online-team-area img{
+  width:100%;
+}
+
+/***
+end of dashboard
+ */
