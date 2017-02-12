@@ -34,7 +34,7 @@ var projects = {
         '<div class="card single-project">'+
         '<div class="card-block">'+
         '<h4 class="card-title">'+file.name+'</h4>'+
-        '<h6 bind-data="'+file.id+'">open this folder <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h6>'+
+        '<h6 class="project-open-link" bind-data="'+file.id+'">open this folder <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h6>'+
 
         '<div class="project-item-line"></div>'+
 
@@ -63,6 +63,11 @@ var projects = {
     }
 
 
+  },
+  projectClickBinding:function probind(){
+    $(".project-open-link").click(function(){
+
+    });
   }
 };
 
