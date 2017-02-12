@@ -3,6 +3,7 @@ var dashboard = {
       dashboard.getRootFiles();
 
       dashboard.initToDo();
+      dashboard.chartBotManager();
 
 
       $('#upload').click(function () {
@@ -152,6 +153,15 @@ var dashboard = {
 
       });
 
+    },
+    chartBotManager:function(){
+      $(".online-team-area").click(function(){
+        $(".member-chart").show();
+      });
+
+      $(".mask").click(function(){
+        $(".member-chart").hide();
+      });
     }
 }
 

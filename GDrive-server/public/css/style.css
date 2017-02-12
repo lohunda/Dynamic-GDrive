@@ -549,14 +549,43 @@ dashboard
 
 }
 
-.online-member .online-david {
-  position: absolute;
-  width:10.5%;
-  top:43.9%;
-  left:13%;
-  display: none;
 
+.member-chart{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height:100%;
+  z-index: 1031;
 }
+
+.member-chart .mask{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height:100%;
+  background-color: #5c5c5c;
+  z-index: 1031;
+  opacity:0.5;
+}
+
+
+
+.member-chart img{
+  width: 27%;
+  position: absolute;
+  right: 0;
+  z-index: 1032;
+}
+
+.chart-input-area{
+  bottom: 0;
+  right:0;
+  position: absolute;
+  z-index: 1033;
+}
+
 
 /***
 end of dashboard

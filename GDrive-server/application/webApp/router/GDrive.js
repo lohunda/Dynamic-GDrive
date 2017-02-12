@@ -13,6 +13,10 @@ router.get('/projects', function(req, res) {
   res.render('projects');
 });
 
+router.get('/projectDetail', function(req, res) {
+  res.render('projectDetail');
+});
+
 router.get('/metrics', function(req, res) {
   res.render('metrics');
 });
