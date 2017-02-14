@@ -1,6 +1,7 @@
 var projects = {
   init: function init() {
     projects.getRootFiles();
+
   },
   getRootFiles: function () {
     $.ajax({
@@ -23,6 +24,7 @@ var projects = {
         var html=projects.singleFile(files[key]);
         $(".folder-container").append(html);
       }
+    projects.projectClickBinding();
   },
   singleFile:function(file){
 
@@ -66,7 +68,8 @@ var projects = {
   },
   projectClickBinding:function probind(){
     $(".project-open-link").click(function(){
-
+       var id=$(this).attr("bind-data");
+      location.href="/GDrive/projectDetail?id="+id;
     });
   }
 };

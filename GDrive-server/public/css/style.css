@@ -506,6 +506,10 @@ start of projects part
   border-left: 1px solid rgba(0,0,0,.125);
 }
 
+.folder-container .project-open-link {
+  cursor: pointer;
+}
+
 /***
 end of projects part
  */

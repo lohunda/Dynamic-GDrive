@@ -12,6 +12,7 @@
     "chart.js": "^2.4.0",
     "bootstrap": "^3.3.7",
     "jquery-ui": "^1.12.1",
-    "components-font-awesome": "^4.7.0"
+    "components-font-awesome": "^4.7.0",
+    "bootstrap-toggle": "^2.2.2"
   }
 }
