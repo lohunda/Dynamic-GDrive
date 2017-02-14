@@ -50,6 +50,19 @@ router.post('/delete', function (req, res) {
   });
 });
 
+// new-folder
+router.post('/new-folder', function (req, res) {
+  authorize(function (auth) {
+    api.newFolder(auth, req.body, function (err, result) {
+      if (err) {
+        res.send({code: 100, msg: "new folder error"});
+        return
+      }
+      res.send(result);
+    });
+  });
+});
+
 router.post('/upload', function (req, res) {
   if (!req.files) {
     res.send({code: 100, msg: "No files were uploaded."});

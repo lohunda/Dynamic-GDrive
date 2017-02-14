@@ -104,7 +104,7 @@ module.exports.exportFile =function exportFile(auth,fileId,callback){
 }
 
 
-module.exports.createFile = function getRoot(auth, file, path,folderId, callback) {
+module.exports.createFile = function getRoot(auth, file, path, folderId, callback) {
   var service = google.drive('v3');
   service.files.create({
     auth: auth,
@@ -126,6 +126,29 @@ module.exports.createFile = function getRoot(auth, file, path,folderId, callback
     callback(err, response);
   });
 
+}
+
+// newFolder
+module.exports.newFolder = function getRoot(auth, params, callback) {
+  var service = google.drive('v3');
+  var fileMetadata = {
+    'name' : params.folderName,
+    parents: [ params.folderId ],
+    'mimeType' : 'application/vnd.google-apps.folder'
+  };
+  service.files.create({
+    auth: auth,
+    resource: fileMetadata,
+    fields: 'id'
+  }, function(err, file) {
+    if(err) {
+      console.log(err);
+      callback(err, file);
+    } else {
+      console.log('Folder Id: ', file.id);
+      callback(err, file);
+    }
+  });
 }
 
 

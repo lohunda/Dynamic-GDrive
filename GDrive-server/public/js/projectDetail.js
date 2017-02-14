@@ -82,14 +82,46 @@ var ProjectDetail = {
     });
   },
   chartBotManager:function(){
-    $("#fab-btn").click(function(){
-      $("#mask-chart").show();
+
+    $('#addFolder').on('click', function () {
+
+
+      var newFolderName = $('#folder-name-text').val();
+
+      if(!newFolderName) return false;
+
+      var sendData = {
+        folderId: ProjectDetail.getUrlParameter("id"),
+        folderName: newFolderName
+      };
+      $.ajax({
+        url: '/GDrive/new-folder',
+        data: sendData,
+        type: 'post',
+        success: function (res) {
+          alert('new folder success');
+          location.reload();
+        },
+        error: function (err) {
+          alert('new folder error');
+          console.error(err);
+        }
+      });
+
     });
-    //
-    // $(".mask").click(function(){
-    //   $(".member-chart").hide();
-    // });
-    // upload-file-btn
+
+    $("#fab-btn").click(function(){
+      $(".member-chart").show();
+    });
+
+    $(".mask").click(function(){
+      $(".member-chart").hide();
+    });
+
+    $("#fab-btn-mask").click(function(){
+      $(".member-chart").hide();
+    });
+
     $("#upload-file-btn").click(function(){
       $("#input-file").click();
     });

@@ -29,22 +29,73 @@
       </div>
     </div>
 
+    <div class="member-chart" style="display: none">
+      <div class="mask">
 
+      </div>
 
-    <div class="mask">
+      <img id="setting-btn" style="position: fixed;
+    bottom:180px;
+    right:0;
+    width: 70px;" src="/img/setting.png"/>
+
+      <img id="new-folder-btn" data-target="#addFolderDia" data-toggle="modal" style="position: fixed;
+    bottom:120px;
+    right:0;
+    width: 70px;" src="/img/new-folder.png"/>
+
+      <img id="upload-file-btn" style="position: fixed;
+    bottom:60px;
+    right:0;
+    width: 70px;" src="/img/upload-file.png"/>
+
+      <img id="fab-btn-mask" style="position: fixed;
+    bottom:0;
+    right:0;
+    width: 70px;" src="/img/fab.png"/>
+
     </div>
+
+
+
+
+
     <img id="fab-btn" style="position: fixed;
     bottom:0;
     right:0;
     width: 70px;" src="/img/fab.png"/>
 
-    <img id="upload-file-btn" style="position: fixed;
-    bottom:60px;
-    right:0;
-    width: 70px;" src="/img/upload-file.png"/>
-
     <input id="input-file" style="display: none" type="file" multiple>
 
+  </div>
+
+  <div id="addFolderDia" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          New Folder
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row" style="margin-bottom:0;">
+              <div class="modal-body">
+                <form class="container-fluid form-horizontal" id="form-addFolder">
+                  <div class="form-group">
+                    <div class="col-sm-8">
+                      <input id="folder-name-text" class="form-control text-content" type="text" name="nText" />
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="addFolder" class="btn btn-primary">Add</button>
+        <button data-dismiss="modal" class="btn cancel-btn">Close</button>
+      </div>
+    </div>
   </div>
 
 </div>
