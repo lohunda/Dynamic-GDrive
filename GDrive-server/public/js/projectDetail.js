@@ -41,6 +41,7 @@ var ProjectDetail = {
       ProjectDetail.singleFile(files[key]);
     }
     ProjectDetail.projectClickBinding();
+    ProjectDetail.fileClickBinding();
   },
   singleFile: function (file) {
     if (file.mimeType === "application/vnd.google-apps.folder") {
@@ -54,7 +55,7 @@ var ProjectDetail = {
         '</div>';
       $(".folder-container").append(projectItem);
     } else if (file.mimeType === "text/plain") {
-      var fileItem= '<div class="file-item col-md-2 text-center">' +
+      var fileItem= '<div class="file-item col-md-2 text-center" bind-data="' + file.id + '">' +
         '<figure>' +
         '<img class="file-img" src="/img/file_short01.png" >' +
         '<figcaption >' + file.name + ' </figcaption>' +
@@ -70,6 +71,12 @@ var ProjectDetail = {
     $(".project-open-link").click(function () {
       var id = $(this).attr("bind-data");
       location.href = "/GDrive/projectDetail?id=" + id;
+    });
+  },
+  fileClickBinding:function fileBind(){
+    $(".file-item").click(function(){
+      var id = $(this).attr("bind-data");
+      location.href = "/GDrive/fileContent?id=" + id;
     });
   }
 };
