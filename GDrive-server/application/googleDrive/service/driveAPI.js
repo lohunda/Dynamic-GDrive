@@ -61,7 +61,7 @@ module.exports.getRoot = function getRoot(auth, callback) {
   }, function (err, response) {
     if (err) {
       console.log('The API returned an error: ' + err);
-      return;
+
     }
     callback(err, response);
   });
@@ -78,7 +78,7 @@ module.exports.getFilesByFolder = function getRoot(auth, folderId, callback) {
   }, function (err, response) {
     if (err) {
       console.log('The API returned an error: ' + err);
-      return;
+
     }
     callback(err, response);
   });
@@ -98,7 +98,7 @@ module.exports.exportFile =function exportFile(auth,fileId,callback){
       return;
     }
 
-    callback(response);
+    callback(err,response);
   });
 
 }
