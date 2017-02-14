@@ -514,7 +514,28 @@ start of projects part
 end of projects part
  */
 
+/****
+start of project detail
+ */
+.project-detail-area .project-folder-area{
+  padding:0;
+}
+.project-detail-area .folder-container .folder-icon{
+  padding: 0;
+}
 
+.project-detail-area .folder-container .folder-icon img{
+  height:64px;
+}
+
+.project-detail-area .folder-title{
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+/***
+end of project detail
+ */
 
 
 
