@@ -4,7 +4,6 @@ var ProjectDetail = {
     var id = ProjectDetail.getUrlParameter("id");
 
     ProjectDetail.getProjectFiles(id);
-    ProjectDetail.chartBotManager();
 
   },
   getUrlParameter: function getUrlParameter(sParam) {
@@ -45,7 +44,6 @@ var ProjectDetail = {
     ProjectDetail.fileClickBinding();
   },
   singleFile: function (file) {
-    debugger;
     if (file.mimeType === "application/vnd.google-apps.folder") {
       var projectItem = '<div class="col-md-4 project-open-link" bind-data="' + file.id + '">' +
         '<div class="card single-project">' +
@@ -56,7 +54,7 @@ var ProjectDetail = {
         '</div>' +
         '</div>';
       $(".folder-container").append(projectItem);
-    } else if (file.mimeType ===  "application/vnd.google-apps.document") {
+    } else if (file.mimeType === "text/plain") {
       var fileItem= '<div class="file-item col-md-2 text-center" bind-data="' + file.id + '">' +
         '<figure>' +
         '<img class="file-img" src="/img/file_short01.png" >' +
@@ -80,25 +78,49 @@ var ProjectDetail = {
       var id = $(this).attr("bind-data");
       location.href = "/GDrive/fileContent?id=" + id;
     });
-  },
-  chartBotManager:function(){
-    // $("#fab-btn").click(function(){
-    //   debugger
-    //   $("#mask-chart").show();
-    // });
-    //
-    // $(".mask").click(function(){
-    //   $(".member-chart").hide();
-    // });
-    // upload-file-btn
-    $("#upload-file-btn").click(function(){
-      $("#input-file").click();
-    });
   }
 };
 
+
+var fileContent={
+  init:function(){
+    var id= fileContent.getUrlParameter('id');
+    fileContent.getContent(id);
+  },
+  getContent:function(id){
+    $.ajax({
+      url: "/GDrive/getContent?id=" + id,
+      method: "get",
+      success: function (res) {
+
+       debugger;
+
+        console.log(res);
+
+      },
+      error: function (res) {
+        console.log(res);
+      }
+    })
+  },
+  getUrlParameter: function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+      sURLVariables = sPageURL.split('&'),
+      sParameterName,
+      i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+      sParameterName = sURLVariables[i].split('=');
+
+      if (sParameterName[0] === sParam) {
+        return sParameterName[1] === undefined ? true : sParameterName[1];
+      }
+    }
+  },
+}
+
 $(function () {
-  ProjectDetail.init();
+  fileContent.init();
 });
 
 

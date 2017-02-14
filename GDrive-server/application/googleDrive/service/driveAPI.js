@@ -85,6 +85,25 @@ module.exports.getFilesByFolder = function getRoot(auth, folderId, callback) {
 }
 
 
+module.exports.exportFile =function exportFile(auth,fileId,callback){
+  var service = google.drive('v3');
+
+  service.files.export({
+    auth: auth,
+    fileId: fileId,
+    mimeType: 'text/plain'
+  },function(err, response){
+    if (err) {
+      console.log('The API returned an error: ' + err);
+      return;
+    }
+
+    callback(response);
+  });
+
+}
+
+
 module.exports.createFile = function getRoot(auth, file, path, callback) {
   var service = google.drive('v3');
   service.files.create({
