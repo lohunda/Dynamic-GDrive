@@ -44,6 +44,7 @@ var ProjectDetail = {
     ProjectDetail.fileClickBinding();
   },
   singleFile: function (file) {
+    debugger;
     if (file.mimeType === "application/vnd.google-apps.folder") {
       var projectItem = '<div class="col-md-4 project-open-link" bind-data="' + file.id + '">' +
         '<div class="card single-project">' +
@@ -54,7 +55,7 @@ var ProjectDetail = {
         '</div>' +
         '</div>';
       $(".folder-container").append(projectItem);
-    } else if (file.mimeType === "text/plain") {
+    } else if (file.mimeType ===  "application/vnd.google-apps.document") {
       var fileItem= '<div class="file-item col-md-2 text-center" bind-data="' + file.id + '">' +
         '<figure>' +
         '<img class="file-img" src="/img/file_short01.png" >' +

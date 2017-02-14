@@ -87,20 +87,20 @@ module.exports.getFilesByFolder = function getRoot(auth, folderId, callback) {
 
 module.exports.exportFile =function exportFile(auth,fileId,callback){
   var service = google.drive('v3');
-  var dest = fs.createWriteStream('tmp/'+fileId+'.txt');
-  service.files.get({
+
+  service.files.export({
     auth: auth,
     fileId: fileId,
-    alt: 'text/plain'
-  })
-    .on('end', function() {
-      console.log('Done');
-      callback();
-    })
-    .on('error', function(err) {
-      console.log('Error during download', err);
-    })
-    .pipe(dest);
+    mimeType: 'text/plain'
+  },function(err, response){
+    if (err) {
+      console.log('The API returned an error: ' + err);
+      return;
+    }
+
+    callback(response);
+  });
+
 }
 
 
