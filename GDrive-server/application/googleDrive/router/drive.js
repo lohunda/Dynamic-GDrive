@@ -28,12 +28,11 @@ router.get('/getRootFiles', function (req, res) {
 
 router.get('/getFilesByFolder', function (req, res) {
   authorize(function (auth) {
-    api.getRoot(auth, req.query.id, function (err, result) {
+    api.getFilesByFolder(auth, req.query.id, function (err, result) {
       if (err) {
         res.send({code: 100, msg: "get root file error"});
         return
       }
-
       res.send(result);
     });
   });

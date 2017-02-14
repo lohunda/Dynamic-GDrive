@@ -1,11 +1,28 @@
 var projects = {
   init: function init() {
-    projects.getRootFiles();
+
+    var id = projects.getUrlParameter("id");
+    debugger;
+    projects.getProjectFiles(id);
 
   },
-  getRootFiles: function () {
+  getUrlParameter: function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+      sURLVariables = sPageURL.split('&'),
+      sParameterName,
+      i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+      sParameterName = sURLVariables[i].split('=');
+
+      if (sParameterName[0] === sParam) {
+        return sParameterName[1] === undefined ? true : sParameterName[1];
+      }
+    }
+  },
+  getProjectFiles: function (id) {
     $.ajax({
-      url: "/GDrive/getRootFiles",
+      url: "/GDrive/getFilesByFolder?id=" + id,
       method: "get",
       success: function (res) {
 
@@ -19,35 +36,40 @@ var projects = {
       }
     })
   },
-  loadingRootFiles:function(files){
-      for (var key in files){
-        var html=projects.singleFile(files[key]);
-        $(".folder-container").append(html);
-      }
+  loadingRootFiles: function (files) {
+    for (var key in files) {
+      projects.singleFile(files[key]);
+    }
     projects.projectClickBinding();
   },
-  singleFile:function(file){
-    if(file.mimeType==="application/vnd.google-apps.folder"){
-      var projectItem='<div class="col-md-4 project-open-link" bind-data="'+file.id+'">'+
-        '<div class="card single-project">'+
-        '<div class="card-block project-folder-area">'+
-       '<div class="col-md-4 folder-icon"><img  src="/img/foldericon.png" /></div>'+
-        '<div class="col-md-8"><h4 class="card-title folder-title">'+file.name+'</h4></div>'+
-      '</div>'+
-      '</div>'+
-      '</div>';
-      return projectItem;
+  singleFile: function (file) {
+    if (file.mimeType === "application/vnd.google-apps.folder") {
+      var projectItem = '<div class="col-md-4 project-open-link" bind-data="' + file.id + '">' +
+        '<div class="card single-project">' +
+        '<div class="card-block project-folder-area">' +
+        '<div class="col-md-4 folder-icon"><img  src="/img/foldericon.png" /></div>' +
+        '<div class="col-md-8"><h4 class="card-title folder-title">' + file.name + '</h4></div>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
+      $(".folder-container").append(projectItem);
+    } else if (file.mimeType === "text/plain") {
+      var fileItem= '<div class="file-item col-md-2 text-center">' +
+        '<figure>' +
+        '<img class="file-img" src="/img/file_short01.png" >' +
+        '<figcaption >' + file.name + ' </figcaption>' +
+        '</figure>' +
+        '</div>';
 
-    }else {
+      $(".file-container").append(fileItem);
+    } else {
       return "";
     }
-
-
   },
-  projectClickBinding:function probind(){
-    $(".project-open-link").click(function(){
-       var id=$(this).attr("bind-data");
-      location.href="/GDrive/projectDetail?id="+id;
+  projectClickBinding: function probind() {
+    $(".project-open-link").click(function () {
+      var id = $(this).attr("bind-data");
+      location.href = "/GDrive/projectDetail?id=" + id;
     });
   }
 };

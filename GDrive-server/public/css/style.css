@@ -533,6 +533,10 @@ start of project detail
   margin-bottom: 15px;
 }
 
+.file-item .file-img{
+  width:100%;
+}
+
 /***
 end of project detail
  */
