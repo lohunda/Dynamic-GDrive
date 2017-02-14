@@ -86,8 +86,8 @@ router.get('/getContent', function (req, res) {
   authorize(function (auth) {
     api.exportFile(auth,req.query.id, function (err, result) {
       if (err) {
-        res.send({code: 100, msg: "get root file error"});
-        return
+        res.send({code: 100, msg: "get file content error"});
+        return;
       }
 
       res.send(result);

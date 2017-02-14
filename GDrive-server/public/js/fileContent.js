@@ -93,10 +93,7 @@ var fileContent={
       method: "get",
       success: function (res) {
 
-       debugger;
-
-        console.log(res);
-
+        $('.file-content').append(res);
       },
       error: function (res) {
         console.log(res);
