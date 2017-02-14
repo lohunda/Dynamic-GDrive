@@ -82,10 +82,9 @@ var ProjectDetail = {
     });
   },
   chartBotManager:function(){
-    // $("#fab-btn").click(function(){
-    //   debugger
-    //   $("#mask-chart").show();
-    // });
+    $("#fab-btn").click(function(){
+      $("#mask-chart").show();
+    });
     //
     // $(".mask").click(function(){
     //   $(".member-chart").hide();
@@ -94,7 +93,36 @@ var ProjectDetail = {
     $("#upload-file-btn").click(function(){
       $("#input-file").click();
     });
-  }
+
+    $('#input-file').change(function () {
+      var formData = new FormData();
+      var files = $('#input-file')[0].files;
+      if (files.length == 0) {
+        alert('not files are selected.')
+        return;
+      }
+      for (var key in files) {
+        formData.append('file' + key, files[key]);
+      }
+      var id = ProjectDetail.getUrlParameter("id");
+      formData.append("folderId",id);
+      $.ajax({
+        url: '/GDrive/upload',
+        data: formData,
+        contentType: false,
+        processData: false,
+        type: 'post',
+        success: function (res) {
+          alert('upload success');
+          location.reload();
+        },
+        error: function (err) {
+          alert('upload error');
+          console.error(err);
+        }
+      });
+    })
+  },
 };
 
 $(function () {

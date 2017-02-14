@@ -104,13 +104,14 @@ module.exports.exportFile =function exportFile(auth,fileId,callback){
 }
 
 
-module.exports.createFile = function getRoot(auth, file, path, callback) {
+module.exports.createFile = function getRoot(auth, file, path,folderId, callback) {
   var service = google.drive('v3');
   service.files.create({
     auth: auth,
     resource: {
       name: file.name,
-      mimeType: file.mimetype
+      parents: [ folderId ],
+      mimeType: 'application/vnd.google-apps.document'
     },
     media: {
       mimeType: file.mimetype,

@@ -64,7 +64,7 @@ router.post('/upload', function (req, res) {
         return;
       }
       authorize(function (auth) {
-        api.createFile(auth, file, filePath, function (err, result) {
+        api.createFile(auth, file, filePath,  req.body.folderId, function (err, result) {
           if (err) {
             callback(err, result);
             return
