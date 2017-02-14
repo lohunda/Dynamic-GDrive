@@ -82,5 +82,18 @@ router.post('/upload', function (req, res) {
   });
 });
 
+router.get('/getContent', function (req, res) {
+  authorize(function (auth) {
+    api.exportFile(auth,req.query.id, function (err, result) {
+      if (err) {
+        res.send({code: 100, msg: "get root file error"});
+        return
+      }
+
+      res.send(result);
+    });
+  });
+});
+
 
 module.exports = router;

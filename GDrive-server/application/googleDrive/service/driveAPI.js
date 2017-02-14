@@ -85,6 +85,25 @@ module.exports.getFilesByFolder = function getRoot(auth, folderId, callback) {
 }
 
 
+module.exports.exportFile =function exportFile(auth,fileId,callback){
+  var service = google.drive('v3');
+  var dest = fs.createWriteStream('tmp/'+fileId+'.txt');
+  service.files.get({
+    auth: auth,
+    fileId: fileId,
+    alt: 'text/plain'
+  })
+    .on('end', function() {
+      console.log('Done');
+      callback();
+    })
+    .on('error', function(err) {
+      console.log('Error during download', err);
+    })
+    .pipe(dest);
+}
+
+
 module.exports.createFile = function getRoot(auth, file, path, callback) {
   var service = google.drive('v3');
   service.files.create({
