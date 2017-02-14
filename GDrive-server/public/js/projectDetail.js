@@ -4,6 +4,7 @@ var ProjectDetail = {
     var id = ProjectDetail.getUrlParameter("id");
 
     ProjectDetail.getProjectFiles(id);
+    ProjectDetail.chartBotManager();
 
   },
   getUrlParameter: function getUrlParameter(sParam) {
@@ -77,6 +78,20 @@ var ProjectDetail = {
     $(".file-item").click(function(){
       var id = $(this).attr("bind-data");
       location.href = "/GDrive/fileContent?id=" + id;
+    });
+  },
+  chartBotManager:function(){
+    // $("#fab-btn").click(function(){
+    //   debugger
+    //   $("#mask-chart").show();
+    // });
+    //
+    // $(".mask").click(function(){
+    //   $(".member-chart").hide();
+    // });
+    // upload-file-btn
+    $("#upload-file-btn").click(function(){
+      $("#input-file").click();
     });
   }
 };
