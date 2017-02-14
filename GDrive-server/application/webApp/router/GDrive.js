@@ -17,6 +17,10 @@ router.get('/projectDetail', function(req, res) {
   res.render('projectDetail');
 });
 
+router.get('/fileContent', function(req, res) {
+  res.render('fileContent');
+});
+
 router.get('/metrics', function(req, res) {
   res.render('metrics');
 });

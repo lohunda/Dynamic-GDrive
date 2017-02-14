@@ -1,9 +1,9 @@
-var projects = {
+var ProjectDetail = {
   init: function init() {
 
-    var id = projects.getUrlParameter("id");
-    debugger;
-    projects.getProjectFiles(id);
+    var id = ProjectDetail.getUrlParameter("id");
+
+    ProjectDetail.getProjectFiles(id);
 
   },
   getUrlParameter: function getUrlParameter(sParam) {
@@ -26,7 +26,7 @@ var projects = {
       method: "get",
       success: function (res) {
 
-        projects.loadingRootFiles(res.files);
+        ProjectDetail.loadingRootFiles(res.files);
 
         console.log(res);
 
@@ -38,9 +38,9 @@ var projects = {
   },
   loadingRootFiles: function (files) {
     for (var key in files) {
-      projects.singleFile(files[key]);
+      ProjectDetail.singleFile(files[key]);
     }
-    projects.projectClickBinding();
+    ProjectDetail.projectClickBinding();
   },
   singleFile: function (file) {
     if (file.mimeType === "application/vnd.google-apps.folder") {
@@ -75,7 +75,7 @@ var projects = {
 };
 
 $(function () {
-  projects.init();
+  ProjectDetail.init();
 });
 
 
