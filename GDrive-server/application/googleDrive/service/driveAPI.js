@@ -128,6 +128,44 @@ module.exports.createFile = function getRoot(auth, file, path, folderId, callbac
 
 }
 
+
+module.exports.createComment = function getRoot(auth, params, callback) {
+  var service = google.drive('v3');
+  service.comments.create({
+    auth: auth,
+    fileId: params.fileId,
+    resource: {
+      "content": params.content,
+    },
+    fields: "id, content"
+  }, function (err, response) {
+    if (err) {
+      console.log('The API returned an error: ' + err);
+      return;
+    }
+    console.log('create comment successful');
+    callback(err, response);
+  });
+
+}
+
+module.exports.getComments = function getRoot(auth, params, callback) {
+  var service = google.drive('v3');
+  service.comments.list({
+    auth: auth,
+    fileId: params.fileId,
+    fields: "kind, nextPageToken, comments"
+  }, function (err, response) {
+    if (err) {
+      console.log('The API returned an error: ' + err);
+      return;
+    }
+    console.log('create comment successful');
+    callback(err, response);
+  });
+
+}
+
 // newFolder
 module.exports.newFolder = function getRoot(auth, params, callback) {
   var service = google.drive('v3');

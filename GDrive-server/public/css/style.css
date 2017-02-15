@@ -616,7 +616,7 @@ dashboard
 
 
 .member-chart img{
-  width: 27%;
+  width: 100%;
   position: absolute;
   right: 0;
   z-index: 1032;

@@ -50,6 +50,30 @@ router.post('/delete', function (req, res) {
   });
 });
 
+router.post('/create-comment', function (req, res) {
+  authorize(function (auth) {
+    api.createComment(auth, req.body, function (err, result) {
+      if (err) {
+        res.send({code: 100, msg: "create comment error"});
+        return
+      }
+      res.send(result);
+    });
+  });
+});
+
+router.post('/get-comments', function (req, res) {
+  authorize(function (auth) {
+    api.getComments(auth, req.body, function (err, result) {
+      if (err) {
+        res.send({code: 100, msg: "get comments error"});
+        return
+      }
+      res.send(result);
+    });
+  });
+});
+
 // new-folder
 router.post('/new-folder', function (req, res) {
   authorize(function (auth) {

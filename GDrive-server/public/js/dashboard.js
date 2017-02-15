@@ -162,6 +162,30 @@ var dashboard = {
       $(".mask").click(function(){
         $(".member-chart").hide();
       });
+
+      // sendMsg
+      $("#sendMsg").click(function(){
+        $(".member-chart img").attr("src", "/img/chartBot2.png");
+      });
+
+      // testComment
+      $("#testComment").click(function(){
+        $.ajax({
+          url: '/GDrive/create-comment',
+          data: {
+            fileId: '0ByRMpfLB1qdiMXJtb3FucTYydkk'
+          },
+          type: 'post',
+          success: function (res) {
+            alert('create comment success');
+            location.reload();
+          },
+          error: function (err) {
+            alert('create comment error');
+            console.error(err);
+          }
+        });
+      });
     }
 }
 

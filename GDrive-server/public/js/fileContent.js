@@ -5,6 +5,8 @@ var ProjectDetail = {
 
     ProjectDetail.getProjectFiles(id);
 
+
+
   },
   getUrlParameter: function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -113,11 +115,65 @@ var fileContent={
         return sParameterName[1] === undefined ? true : sParameterName[1];
       }
     }
+  }
+}
+
+var comments = {
+  init: function init() {
+    var id = ProjectDetail.getUrlParameter("id");
+    comments.eventBinding(id);
+    comments.loadComment(id);
   },
+  loadComment: function initComment(id) {
+    $.ajax({
+      url: '/GDrive/get-comments',
+      data: {
+        fileId: id
+      },
+      type: 'post',
+      success: function (res) {
+        var comments = res.comments;
+        if(comments.length > 0){
+          for(var key in comments){
+            $("#commentBar").prepend('<label>' + comments[key].author.displayName + ': ' + comments[key].content + '</label> <p><label>time: ' + comments[key].createdTime + '</label>>');
+          }
+        }
+      },
+      error: function (err) {
+        alert('get comments error');
+        console.error(err);
+      }
+    });
+  },
+  eventBinding: function eventBinding(id) {
+    $("#sendComment").click(function () {
+      var commentContent = $("#commentContent").val();
+      if(!commentContent) return;
+
+      $.ajax({
+        url: '/GDrive/create-comment',
+        data: {
+          fileId: id,
+          content: commentContent
+        },
+        type: 'post',
+        success: function (res) {
+          alert('create comment success');
+          location.reload();
+        },
+        error: function (err) {
+          alert('create comment error');
+          console.error(err);
+        }
+      });
+
+    });
+  }
 }
 
 $(function () {
   fileContent.init();
+  comments.init();
 });
 
 
