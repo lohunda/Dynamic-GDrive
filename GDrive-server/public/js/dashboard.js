@@ -5,6 +5,8 @@ var dashboard = {
       dashboard.initToDo();
       dashboard.chartBotManager();
 
+      localStorage.removeItem('bar-que');
+
 
       $('#upload').click(function () {
         var formData = new FormData();

@@ -1,10 +1,37 @@
 var ProjectDetail = {
+  currPage:null,
   init: function init() {
-
     var id = ProjectDetail.getUrlParameter("id");
-
     ProjectDetail.getProjectFiles(id);
     ProjectDetail.chartBotManager();
+    ProjectDetail.updateBar();
+  },
+  updateBar: function updateBar(){
+
+    var barQueue = JSON.parse(localStorage.getItem('bar-que'));
+
+    var barHTML = '<a href="/GDrive/projects">Project</a>';
+
+    if(barQueue) {
+
+      for(var key = barQueue.length - 1; key >= 0; key--){
+        var obj = barQueue[key];
+        if(location.href.indexOf(obj.url) > -1){
+          break;
+        }else{
+          barQueue.pop();
+        }
+      }
+
+      localStorage.setItem('bar-que', JSON.stringify(barQueue));
+
+      for (var key = 0; key < barQueue.length; key++) {
+        var obj = barQueue[key];
+        barHTML += ' -> <a href="' + obj.url + '">' + obj.name + '</a>';
+      }
+    }
+
+    $("#proj-bar").html(barHTML);
 
   },
   getUrlParameter: function getUrlParameter(sParam) {
@@ -45,7 +72,6 @@ var ProjectDetail = {
     ProjectDetail.fileClickBinding();
   },
   singleFile: function (file) {
-    debugger;
     if (file.mimeType === "application/vnd.google-apps.folder") {
       var projectItem = '<div class="col-md-4 project-open-link" bind-data="' + file.id + '">' +
         '<div class="card single-project">' +
@@ -72,12 +98,41 @@ var ProjectDetail = {
   projectClickBinding: function probind() {
     $(".project-open-link").click(function () {
       var id = $(this).attr("bind-data");
+      var barQueue = JSON.parse(localStorage.getItem('bar-que'));
+
+      var currName = $(this).find(".folder-title").html();
+
+      var barObj = {
+        name: currName,
+        url: '/GDrive/projectDetail?id=' + id
+      }
+
+      if(barQueue){
+        barQueue.push(barObj);
+        localStorage.setItem('bar-que', JSON.stringify(barQueue));
+      }else{
+        localStorage.setItem('bar-que', JSON.stringify([barObj]));
+      }
       location.href = "/GDrive/projectDetail?id=" + id;
     });
   },
   fileClickBinding:function fileBind(){
     $(".file-item").click(function(){
       var id = $(this).attr("bind-data");
+      var barQueue = JSON.parse(localStorage.getItem('bar-que'));
+      var currName = $(this).find(".figcaption").html();
+
+      var barObj = {
+        name: currName,
+        url: '/GDrive/fileContent?id=' + id
+      }
+
+      if(barQueue){
+        barQueue.push(barObj);
+        localStorage.setItem('bar-que', JSON.stringify(barQueue));
+      }else{
+        localStorage.setItem('bar-que', JSON.stringify([barObj]));
+      }
       location.href = "/GDrive/fileContent?id=" + id;
     });
   },

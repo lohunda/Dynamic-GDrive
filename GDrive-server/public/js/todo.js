@@ -1,6 +1,8 @@
 $("#sortable").sortable();
 $("#sortable").disableSelection();
 
+localStorage.removeItem('bar-que');
+
 countTodos();
 
 // all done btn

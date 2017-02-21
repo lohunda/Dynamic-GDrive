@@ -2,6 +2,9 @@ var projects = {
   init: function init() {
     projects.getRootFiles();
 
+    localStorage.removeItem('bar-que');
+
+
   },
   getRootFiles: function () {
     $.ajax({
