@@ -570,6 +570,10 @@ dashboard
   cursor: pointer;
 }
 
+.todo-area .btn-green{
+background-color: #00E676;
+}
+
 
 .todo-area .todo-item .active{
   border-color: #00C853;
