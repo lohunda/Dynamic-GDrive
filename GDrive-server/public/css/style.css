@@ -570,6 +570,10 @@ dashboard
   cursor: pointer;
 }
 
+.todo-area .btn-green{
+background-color: #00E676;
+}
+
 
 .todo-area .todo-item .active{
   border-color: #00C853;
@@ -625,10 +629,21 @@ dashboard
 .chart-input-area{
   bottom: 0;
   right:0;
+  width: 100%;
+  padding: 5px;
   position: absolute;
   z-index: 1033;
 }
 
+.chart-input-area .chart-input-box{
+  margin-bottom: 5px;
+  border-radius: .25rem;
+  border-color:#00E676;
+}
+
+.chart-input-area .chart-input-send {
+  float: right;
+}
 
 /***
 end of dashboard
