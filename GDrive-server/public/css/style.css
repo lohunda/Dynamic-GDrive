@@ -19,7 +19,6 @@ a {
   margin-left: 0;
 }
 
-
 .side-menu {
   position: fixed;
   width: 300px;
@@ -440,18 +439,13 @@ li.ui-state-default:last-child {
   height: 10em;
 }
 
-
-
-.main-section .main-content{
+.main-section .main-content {
   margin-top: 70px;
 }
-
 
 /***
 start of projects part
  */
-
-
 
 .card {
   position: relative;
@@ -465,7 +459,7 @@ start of projects part
   -ms-flex-direction: column;
   flex-direction: column;
   background-color: #fff;
-  border: 1px solid rgba(0,0,0,.125);
+  border: 1px solid rgba(0, 0, 0, .125);
   border-radius: .25rem;
 }
 
@@ -481,29 +475,28 @@ start of projects part
   margin-bottom: .75rem;
 }
 
-.folder-container .card{
-  margin-bottom:1rem;
+.folder-container .card {
+  margin-bottom: 1rem;
 }
 
-.folder-history{
- margin-top: 4rem;
+.folder-history {
+  margin-top: 4rem;
 }
 
-.folder-history img{
- width:100%;
+.folder-history img {
+  width: 100%;
 
 }
 
 .folder-container .project-item-line {
-  width:100%;
-  border-bottom-color: rgba(0,0,0,.125);
+  width: 100%;
+  border-bottom-color: rgba(0, 0, 0, .125);
   border-bottom-style: solid;
   border-bottom-width: 1px;
 }
 
-.folder-container .project-complete
-{
-  border-left: 1px solid rgba(0,0,0,.125);
+.folder-container .project-complete {
+  border-left: 1px solid rgba(0, 0, 0, .125);
 }
 
 .folder-container .project-open-link {
@@ -517,52 +510,51 @@ end of projects part
 /****
 start of project detail
  */
-.project-detail-area .project-folder-area{
-  padding:0;
-}
-.project-detail-area .folder-container .folder-icon{
+.project-detail-area .project-folder-area {
   padding: 0;
 }
 
-.project-detail-area .folder-container .folder-icon img{
-  height:64px;
+.project-detail-area .folder-container .folder-icon {
+  padding: 0;
 }
 
-.project-detail-area .folder-title{
+.project-detail-area .folder-container .folder-icon img {
+  height: 64px;
+}
+
+.project-detail-area .folder-title {
   margin-top: 25px;
   margin-bottom: 15px;
 }
 
-.file-item .file-img{
-  width:100%;
-  cursor:pointer;
+.file-item .file-img {
+  width: 100%;
+  cursor: pointer;
 }
 
 /***
 end of project detail
  */
 
-
-
 /**
 dashboard
  */
 
-.area-board{
+.area-board {
   border-style: solid;
-  border-color:#888888;
+  border-color: #888888;
   border-width: 1px;
-  border-radius:2px;
+  border-radius: 2px;
   margin-top: 5px;
-  padding:20px;
+  padding: 20px;
 }
 
-.project-time-line{
+.project-time-line {
 
 }
 
-.project-time-line .project-img-container img{
- width:100%;
+.project-time-line .project-img-container img {
+  width: 100%;
 
 }
 
@@ -570,75 +562,69 @@ dashboard
   cursor: pointer;
 }
 
-.todo-area .btn-green{
-background-color: #00E676;
+.todo-area .btn-green {
+  background-color: #00E676;
 }
 
-
-.todo-area .todo-item .active{
+.todo-area .todo-item .active {
   border-color: #00C853;
-  border-width:1.5px;
+  border-width: 1.5px;
 }
 
 .todo-area .todo-btn-area {
   margin-top: 20px;
 }
 
-
-.hot-search-area .search-img img{
-  width:100%;
-}
-
-
-.online-member .online-team-area img{
-  width:651px;
-  height:188px;
-
-}
-
-
-.member-chart{
-  position: fixed;
-  top:0;
-  left:0;
+.hot-search-area .search-img img {
   width: 100%;
-  height:100%;
+}
+
+.online-member .online-team-area img {
+  width: 651px;
+  height: 188px;
+
+}
+
+.member-chart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1031;
 }
 
-.member-chart .mask{
+.member-chart .mask {
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 100%;
-  height:100%;
+  height: 100%;
   background-color: #5c5c5c;
   z-index: 1031;
-  opacity:0.5;
+  opacity: 0.5;
 }
 
-
-
-.member-chart img{
+.member-chart img {
   width: 100%;
   position: absolute;
   right: 0;
   z-index: 1032;
 }
 
-.chart-input-area{
+.chart-input-area {
   bottom: 0;
-  right:0;
+  right: 0;
   width: 100%;
   padding: 5px;
   position: absolute;
   z-index: 1033;
 }
 
-.chart-input-area .chart-input-box{
+.chart-input-area .chart-input-box {
   margin-bottom: 5px;
   border-radius: .25rem;
-  border-color:#00E676;
+  border-color: #00E676;
 }
 
 .chart-input-area .chart-input-send {
@@ -648,3 +634,22 @@ background-color: #00E676;
 /***
 end of dashboard
  */
+
+/***
+start of tag area
+ */
+
+.tag-area {
+
+}
+
+.tag-area .tag-img {
+  width: 100%;
+}
+
+/**
+end of tag area
+ */
+
+
+
