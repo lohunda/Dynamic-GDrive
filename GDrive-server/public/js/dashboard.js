@@ -178,6 +178,3 @@ var dashboard = {
 $(function () {
   dashboard.init();
 });
-
-
-
