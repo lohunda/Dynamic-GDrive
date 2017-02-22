@@ -10,6 +10,18 @@ $("#checkAll").click(function(){
   AllDone();
 });
 
+$("#fab-btn").click(function(){
+  $(".member-chart").show();
+});
+
+$("#fab-btn-mask").click(function(){
+  $(".member-chart").hide();
+});
+
+$(".mask").click(function(){
+  $(".member-chart").hide();
+});
+
 //create todo
 $('.add-todo').on('keypress',function (e) {
   e.preventDefault
