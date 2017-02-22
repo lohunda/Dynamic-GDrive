@@ -44,24 +44,6 @@ var dashboard = {
         success: function (res) {
 
           dashboard.loadingRootFiles(res.files);
-
-          // $('.delete-file').on('click', function () {
-          //   var fileId =  $(this).attr('file-id');
-          //
-          //   $.ajax({
-          //     url: '/GDrive/delete',
-          //     data: {id: fileId},
-          //     type: 'post',
-          //     success: function (res) {
-          //       alert('delete success');
-          //     },
-          //     error: function (err) {
-          //       alert('delete error');
-          //       console.error(err);
-          //     }
-          //   });
-          // });
-
           console.log(res);
 
         },
@@ -168,6 +150,7 @@ var dashboard = {
       // sendMsg
       $("#sendMsg").click(function(){
         $(".member-chart img").attr("src", "/img/chartBot2.png");
+        $(".chart-input-box").val("");
       });
 
       // testComment
