@@ -88,6 +88,24 @@ var fileContent={
   init:function(){
     var id= fileContent.getUrlParameter('id');
     fileContent.getContent(id);
+    fileContent.updateBar();
+  },
+  updateBar: function updateBar(){
+
+    var barQueue = JSON.parse(localStorage.getItem('bar-que'));
+
+    var barHTML = '<a href="/GDrive/projects">Project</a>';
+
+    if(barQueue) {
+
+      for (var key = 0; key < barQueue.length; key++) {
+        var obj = barQueue[key];
+        barHTML += ' -> <a href="' + obj.url + '">' + obj.name + '</a>';
+      }
+    }
+
+    $("#proj-bar").html(barHTML);
+
   },
   getContent:function(id){
     $.ajax({

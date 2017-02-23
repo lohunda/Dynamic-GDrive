@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <script type="text/javascript" src="/components/bootstrap/dist/js/bootstrap.js"></script>
   <script type="text/javascript" src="/components/bootstrap-toggle/js/bootstrap-toggle.js"></script>
+  <script type="text/javascript" src="/js/speechRecognition.js"></script>
 </head>
 <body>
 
@@ -35,6 +36,21 @@
 
           <!--</li>-->
         <!--</ul>-->
+        <!-- CSS Styles -->
+        <style>
+          .speech {border: 1px solid #DDD; width: 400px; padding: 0; margin: 0}
+          .speech input {border: 0; width: 340px; display: inline-block; height: 30px;}
+          .speech img {float: right; width: 40px }
+        </style>
+
+
+        <!-- Search Form -->
+        <form id="labnol" method="get" action="https://www.google.com/search">
+          <div class="speech">
+            <input type="text" name="q" id="transcript" placeholder="Ok, Google..." />
+            <img onclick="startDictation()" src="/img/cHidSVu.gif" />
+          </div>
+        </form>
       </div>
     </div>
   </nav>
@@ -87,7 +103,7 @@
             <li><a href="/GDrive/projects"><span class="glyphicon fa fa-th-large" aria-hidden="true"></span> Projects</a></li>
             <li><a href="/GDrive/metrics"><span class="glyphicon fa fa-bar-chart" aria-hidden="true"></span> KPI</a></li>
             <li><a href="/GDrive/todo"><span class="glyphicon fa fa-list" aria-hidden="true"></span> To Do List</a></li>
-            <li><a href="/GDrive/tags"><span class="glyphicon fa fa-list" aria-hidden="true"></span> Tags</a></li>
+            <li><a href="/GDrive/tags"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Tags</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </nav>

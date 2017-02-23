@@ -120,7 +120,7 @@ var ProjectDetail = {
     $(".file-item").click(function(){
       var id = $(this).attr("bind-data");
       var barQueue = JSON.parse(localStorage.getItem('bar-que'));
-      var currName = $(this).find(".figcaption").html();
+      var currName = $(this).find("figcaption").html();
 
       var barObj = {
         name: currName,
