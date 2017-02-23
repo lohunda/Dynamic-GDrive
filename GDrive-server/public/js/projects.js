@@ -4,6 +4,15 @@ var projects = {
 
     localStorage.removeItem('bar-que');
 
+    $("#tag-img").on('click', function () {
+      debugger;
+      if($(this).attr('src') == "/img/tag button on.png"){
+        $(this).attr('src', "/img/tag button off.png");
+      }else{
+        $(this).attr('src', "/img/tag button on.png");
+      }
+    });
+
 
   },
   getRootFiles: function () {
