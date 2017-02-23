@@ -463,13 +463,20 @@ start of projects part
   border-radius: .25rem;
 }
 
-.folder-history js-hook-history{
-  background-image: url('/img/history@2x.png.png');
+.folder-history .js-hook-history{
+  background-image: url("/img/history@2x.png.png");
+  background-position: center center;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
 }
 
-.folder-history js-hook-comments{
-  background-image: url('/img/insert_comment@2x.png.png');
-
+.folder-history .js-hook-comments{
+  background-image: url("/img/insert_comment@2x.png.png");
+  background-position: center center;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
 }
 
 .card-block {
