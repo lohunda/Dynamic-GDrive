@@ -12,10 +12,10 @@ var projects = {
       }
     });
 
-    $("#btn1").on('click', function () {
+    $(".js-hook-history").on('click', function () {
       $("#comment-img").attr('src', "/img/comments.png");
     });
-    $("#btn2").on('click', function () {
+    $(".js-hook-comments").on('click', function () {
       $("#comment-img").attr('src', "/img/history screen-right@2x.png.png");
     });
 
