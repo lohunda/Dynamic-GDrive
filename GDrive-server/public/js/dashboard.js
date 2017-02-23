@@ -148,10 +148,10 @@ var dashboard = {
       });
 
       // sendMsg
-      $("#sendMsg").click(function(){
-        $(".member-chart img").attr("src", "/img/chartBot2.png");
-        $(".chart-input-box").val("");
-      });
+      // $("#sendMsg").click(function(){
+      //   $(".member-chart img").attr("src", "/img/Chat2@2x.png.png");
+      //   $(".chart-input-box").val("");
+      // });
 
       // testComment
       $("#testComment").click(function(){
