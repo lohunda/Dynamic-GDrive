@@ -5,12 +5,18 @@ var projects = {
     localStorage.removeItem('bar-que');
 
     $("#tag-img").on('click', function () {
-      debugger;
       if($(this).attr('src') == "/img/tag button on.png"){
         $(this).attr('src', "/img/tag button off.png");
       }else{
         $(this).attr('src', "/img/tag button on.png");
       }
+    });
+
+    $("#btn1").on('click', function () {
+      $("#comment-img").attr('src', "/img/comments.png");
+    });
+    $("#btn2").on('click', function () {
+      $("#comment-img").attr('src', "/img/history screen-right@2x.png.png");
     });
 
 
