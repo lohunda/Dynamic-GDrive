@@ -85,27 +85,20 @@ var dashboard = {
     initToDo: function () {
       var mockData = {
         'todo1': {
-          name: 'edit jira card 013',
+          name: 'Updated Invitation: Perform Touch',
           selected: false,
         },
         'todo2': {
-          name: 'edit jira card 014',
-          selected: false,
-        },
-        'todo3': {
-          name: 'edit jira card 015',
+          name: 'LAR-1775 Site history should show allow for specified sorting',
           selected: true,
         },
+
         'todo4': {
-          name: 'edit jira card 016',
+          name: 'Inbox: SDC Requests for Tonight from Tim',
           selected: false,
         },
         'todo5': {
-          name: 'edit jira card 017',
-          selected: false,
-        },
-        'todo6': {
-          name: 'edit jira card 018',
+          name: '#Slack: @dnaidionov  shared your private file PwC Larson NACS demo script  in #g_larson-team.',
           selected: false,
         }
       };

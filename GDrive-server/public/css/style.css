@@ -469,6 +469,7 @@ start of projects part
   background-size: cover;
   width: 30px;
   height: 30px;
+  border:none;
 }
 
 .folder-history .js-hook-comments {
@@ -477,6 +478,7 @@ start of projects part
   background-size: cover;
   width: 30px;
   height: 30px;
+  border:none;
 }
 
 .card-block {
