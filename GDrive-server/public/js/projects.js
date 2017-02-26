@@ -13,10 +13,11 @@ var projects = {
     });
 
     $(".js-hook-history").on('click', function () {
-      $("#comment-img").attr('src', "/img/comments.png");
+
+      $("#comment-img").attr('src', "/img/history screen-right@2x.png.png");
     });
     $(".js-hook-comments").on('click', function () {
-      $("#comment-img").attr('src', "/img/history screen-right@2x.png.png");
+      $("#comment-img").attr('src', "/img/comments.png");
     });
 
 
