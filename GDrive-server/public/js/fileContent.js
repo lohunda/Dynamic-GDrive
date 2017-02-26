@@ -136,11 +136,20 @@ var fileContent={
   },
   shareBtnBind:function shareBtnBind() {
     $(".js-hook-share-btn").click(function () {
-      debugger;
 
-        alert("ok");
+      $(".share-weChart").show();
     })
-  }
+
+    $(".share-img").click(function(){
+      $(".share-img-list").show();
+      $(this).hide();
+    });
+
+    $(".share-img-list").click(function(){
+      $(".share-weChart").hide();
+    });
+  },
+
 
 }
 
