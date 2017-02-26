@@ -749,12 +749,21 @@ file content
 
 }
 
+.comment-area .comment-item {
+  border-color: rgb(231, 231, 231);
+  border-style:solid;
+  border-width: 1px;
+  box-shadow: 0px 2px 1px #888888;
+  padding:5px;
+}
+
 
  #commentContent {
    margin-bottom: 5px;
    border-radius: .25rem;
    border-color: #00E676;
    border-style:solid;
+
  }
 
 /***
