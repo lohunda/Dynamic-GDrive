@@ -56,7 +56,7 @@ var ProjectDetail = {
         '</div>';
       $(".folder-container").append(projectItem);
     } else if (file.mimeType === "text/plain") {
-      var fileItem= '<div class="file-item col-md-2 text-center" bind-data="' + file.id + '">' +
+      var fileItem = '<div class="file-item col-md-2 text-center" bind-data="' + file.id + '">' +
         '<figure>' +
         '<img class="file-img" src="/img/file_short01.png" >' +
         '<figcaption >' + file.name + ' </figcaption>' +
@@ -74,8 +74,8 @@ var ProjectDetail = {
       location.href = "/GDrive/projectDetail?id=" + id;
     });
   },
-  fileClickBinding:function fileBind(){
-    $(".file-item").click(function(){
+  fileClickBinding: function fileBind() {
+    $(".file-item").click(function () {
       var id = $(this).attr("bind-data");
       location.href = "/GDrive/fileContent?id=" + id;
     });
@@ -83,21 +83,21 @@ var ProjectDetail = {
 };
 
 
-var fileContent={
-  init:function(){
-    var id= fileContent.getUrlParameter('id');
+var fileContent = {
+  init: function () {
+    var id = fileContent.getUrlParameter('id');
     fileContent.getContent(id);
     fileContent.updateBar();
     fileContent.shareBtnBind();
 
   },
-  updateBar: function updateBar(){
+  updateBar: function updateBar() {
 
     var barQueue = JSON.parse(localStorage.getItem('bar-que'));
 
     var barHTML = '<a href="/GDrive/projects">Project</a>';
 
-    if(barQueue) {
+    if (barQueue) {
 
       for (var key = 0; key < barQueue.length; key++) {
         var obj = barQueue[key];
@@ -108,7 +108,7 @@ var fileContent={
     $("#proj-bar").html(barHTML);
 
   },
-  getContent:function(id){
+  getContent: function (id) {
     $.ajax({
       url: "/GDrive/getContent?id=" + id,
       method: "get",
@@ -135,18 +135,18 @@ var fileContent={
       }
     }
   },
-  shareBtnBind:function shareBtnBind() {
+  shareBtnBind: function shareBtnBind() {
     $(".js-hook-share-btn").click(function () {
 
       $(".share-weChart").show();
     })
 
-    $(".share-img").click(function(){
+    $(".share-img").click(function () {
       $(".share-img-list").show();
       $(this).hide();
     });
 
-    $(".share-img-list").click(function(){
+    $(".share-img-list").click(function () {
       $(".share-weChart").hide();
       $(".share-img").show();
       $(this).hide();
@@ -172,9 +172,18 @@ var comments = {
       type: 'post',
       success: function (res) {
         var comments = res.comments;
-        if(comments.length > 0){
-          for(var key in comments){
-            $("#commentBar").prepend('<label>' + comments[key].author.displayName + ': ' + comments[key].content + '</label> <p><label>time: ' + comments[key].createdTime + '</label>>');
+        if (comments.length > 0) {
+          for (var key in comments) {
+            var template = '<div class="comment-item col-md-12">' +
+              '<div class="col-md-12">' +
+              '<i>'+moment(comments[key].createdTime).format('MMMM Do YYYY, h:mm:ss a')+'</i>' +
+              '</div>' +
+              '<div class="col-md-12">' +
+              '<label>'+comments[key].author.displayName+':</label> <span>'+comments[key].content+'</span>' +
+              '</div>' +
+              '</div>';
+
+            $("#commentBar").append(template);
           }
         }
       },
@@ -187,7 +196,7 @@ var comments = {
   eventBinding: function eventBinding(id) {
     $("#sendComment").click(function () {
       var commentContent = $("#commentContent").val();
-      if(!commentContent) return;
+      if (!commentContent) return;
 
       $.ajax({
         url: '/GDrive/create-comment',
@@ -208,13 +217,13 @@ var comments = {
 
     });
   },
-  commentAreaBinding:function(){
-    $(".js-hook-comments").click(function(){
+  commentAreaBinding: function () {
+    $(".js-hook-comments").click(function () {
       $(".comment-bar-area").show();
       $(".recommend-doc-area").hide();
     });
 
-    $(".js-hook-recommend").click(function(){
+    $(".js-hook-recommend").click(function () {
       $(".comment-bar-area").hide();
       $(".recommend-doc-area").show();
     });
