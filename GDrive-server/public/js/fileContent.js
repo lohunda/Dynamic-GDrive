@@ -6,7 +6,6 @@ var ProjectDetail = {
     ProjectDetail.getProjectFiles(id);
 
 
-
   },
   getUrlParameter: function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -89,6 +88,7 @@ var fileContent={
     var id= fileContent.getUrlParameter('id');
     fileContent.getContent(id);
     fileContent.updateBar();
+    fileContent.shareBtnBind();
   },
   updateBar: function updateBar(){
 
@@ -133,7 +133,15 @@ var fileContent={
         return sParameterName[1] === undefined ? true : sParameterName[1];
       }
     }
+  },
+  shareBtnBind:function shareBtnBind() {
+    $(".js-hook-share-btn").click(function () {
+      debugger;
+
+        alert("ok");
+    })
   }
+
 }
 
 var comments = {
