@@ -642,6 +642,16 @@ dashboard
   z-index: 1031;
 }
 
+.member-chart-detail{
+  position: absolute;
+  top:0;
+  right:0;
+  height:100%;
+  width:24%;
+  z-index: 1032;
+
+}
+
 .member-chart .mask {
   position: absolute;
   top: 0;
@@ -663,10 +673,10 @@ dashboard
 .chart-input-area {
   bottom: 0;
   right: 0;
-  width: 100%;
   padding: 5px;
   position: absolute;
-  z-index: 1033;
+  z-index: 1037;
+  width: 100%;
 }
 
 .chart-input-area .chart-input-box {

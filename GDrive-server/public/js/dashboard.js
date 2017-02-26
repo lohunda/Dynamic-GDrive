@@ -132,38 +132,60 @@ var dashboard = {
 
     },
     chartBotManager:function(){
+
+      var flag=true;
+
       $(".online-team-area").click(function(){
         $(".member-chart").show();
       });
 
       $(".mask").click(function(){
-        $(".member-chart").hide();
+        if(flag)
+        {
+          flag = !flag;
+          $(".member-chart").hide();
+          $(".member-chart img").attr("src", "/img/chartBot.png");
+          $(".member-chart-detail").css("background-color","white");
+          $(".chart-input-area").show();
+
+        }else {
+          flag = !flag;
+          $(".member-chart").hide();
+          $(".member-chart img").attr("src", "/img/Chat2@2x.png.png");
+          $(".member-chart-detail").css("background-color","transparent");
+          $(".chart-input-area").hide();
+
+        }
+
+
       });
 
       // sendMsg
-      // $("#sendMsg").click(function(){
-      //   $(".member-chart img").attr("src", "/img/Chat2@2x.png.png");
-      //   $(".chart-input-box").val("");
-      // });
+      $("#sendMsg").click(function(){
+        $(".member-chart img").attr("src", "/img/chartBot2.png");
+        $(".chart-input-box").val("");
+      });
 
       // testComment
-      $("#testComment").click(function(){
-        $.ajax({
-          url: '/GDrive/create-comment',
-          data: {
-            fileId: '0ByRMpfLB1qdiMXJtb3FucTYydkk'
-          },
-          type: 'post',
-          success: function (res) {
-            alert('create comment success');
-            location.reload();
-          },
-          error: function (err) {
-            alert('create comment error');
-            console.error(err);
-          }
-        });
-      });
+      // $("#testComment").click(function(){
+      //   $.ajax({
+      //     url: '/GDrive/create-comment',
+      //     data: {
+      //       fileId: '0ByRMpfLB1qdiMXJtb3FucTYydkk'
+      //     },
+      //     type: 'post',
+      //     success: function (res) {
+      //       alert('create comment success');
+      //       location.reload();
+      //     },
+      //     error: function (err) {
+      //       alert('create comment error');
+      //       console.error(err);
+      //     }
+      //   });
+      // });
+
+
     }
 }
 
