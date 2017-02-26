@@ -147,6 +147,8 @@ var fileContent={
 
     $(".share-img-list").click(function(){
       $(".share-weChart").hide();
+      $(".share-img").show();
+      $(this).hide();
     });
   },
 

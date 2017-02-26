@@ -744,6 +744,19 @@ file content
   margin-left:20%;
 }
 
+
+.comment-area{
+
+}
+
+
+ #commentContent {
+   margin-bottom: 5px;
+   border-radius: .25rem;
+   border-color: #00E676;
+   border-style:solid;
+ }
+
 /***
 end of file content
  */
