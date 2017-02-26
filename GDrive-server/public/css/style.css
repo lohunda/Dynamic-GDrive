@@ -784,6 +784,27 @@ file content
    margin-top: 13px;
  }
 
+
+ .comment-area .js-hook-comments{
+   background-image: url("/img/insert_comment@2x.png.png");
+   background-position: center center;
+   background-size: cover;
+   width: 30px;
+   height: 30px;
+   border: none;
+ }
+
+.comment-area .js-hook-recommend{
+  background-image: url("/img/recommend.png");
+  background-position: center center;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+
+
+
 /***
 end of file content
  */

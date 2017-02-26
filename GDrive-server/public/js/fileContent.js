@@ -89,6 +89,7 @@ var fileContent={
     fileContent.getContent(id);
     fileContent.updateBar();
     fileContent.shareBtnBind();
+
   },
   updateBar: function updateBar(){
 
@@ -160,6 +161,7 @@ var comments = {
     var id = ProjectDetail.getUrlParameter("id");
     comments.eventBinding(id);
     comments.loadComment(id);
+    comments.commentAreaBinding();
   },
   loadComment: function initComment(id) {
     $.ajax({
@@ -205,6 +207,18 @@ var comments = {
       });
 
     });
+  },
+  commentAreaBinding:function(){
+    $(".js-hook-comments").click(function(){
+      $(".comment-bar-area").show();
+      $(".recommend-doc-area").hide();
+    });
+
+    $(".js-hook-recommend").click(function(){
+      $(".comment-bar-area").hide();
+      $(".recommend-doc-area").show();
+    });
+
   }
 }
 
