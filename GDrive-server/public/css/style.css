@@ -562,6 +562,15 @@ start of project detail
 
 }
 
+#labnol{
+  padding-top: 10px;
+}
+
+#labnol img{
+  margin-top: -5px;
+}
+
+
 .project-detail-area .folder-container .folder-icon {
   padding: 0;
 }
