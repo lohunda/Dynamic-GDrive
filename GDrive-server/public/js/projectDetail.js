@@ -27,7 +27,7 @@ var ProjectDetail = {
 
       for (var key = 0; key < barQueue.length; key++) {
         var obj = barQueue[key];
-        barHTML += ' -> <a href="' + obj.url + '">' + obj.name + '</a>';
+        barHTML += ' &nbsp&nbsp>&nbsp&nbsp  <a href="' + obj.url + '">' + obj.name + '</a>';
       }
     }
 
